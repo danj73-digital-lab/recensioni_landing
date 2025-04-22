@@ -1,124 +1,116 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recensioni</title>
-<link rel="stylesheet" href="./style.css" />
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recensioni - PS</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer>
+    function filterReviews() {
+      const rating = document.getElementById('ratingFilter').value;
+      const category = document.getElementById('categoryFilter').value;
+      const date = document.getElementById('dateFilter').value;
 
-<body>
-  <header>
-    <div class="logo">Logo Azienda</div>
-    <h1>Recensioni dei nostri clienti</h1>
+      const cards = document.querySelectorAll('.review-card');
+      cards.forEach(card => {
+        const cardRating = card.getAttribute('data-rating');
+        const cardCategory = card.getAttribute('data-category');
+        const cardDate = card.getAttribute('data-date');
+
+        const matchesRating = rating === "all" || cardRating === rating;
+        const matchesCategory = category === "all" || cardCategory === category;
+        const matchesDate = date === "all" || cardDate === date;
+
+        card.style.display = (matchesRating && matchesCategory && matchesDate) ? "block" : "none";
+      });
+    }
+  </script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+  <header class="bg-white shadow p-4 flex items-center justify-between">
+    <h1 class="text-xl font-bold">PS - Recensioni Clienti</h1>
+    <img src="logo-placeholder.png" alt="Logo" class="h-10">
   </header>
 
-  <section class="overview">
-    <div class="average-rating">
-      <div class="score">
-        <span class="value">4.5</span>
-        <span class="stars">★★★★☆</span>
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <!-- Blocco media recensioni -->
+    <section class="bg-white p-6 rounded shadow mb-8">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold">Valutazione media</h2>
+          <p class="text-4xl font-semibold">4.5 <span class="text-yellow-400">★★★★★</span></p>
+          <p class="text-sm text-gray-500">Basata su 1200 recensioni</p>
+        </div>
+        <div class="w-1/2">
+          <div class="space-y-2">
+            <div class="flex items-center">
+              <span class="w-1/6">5 stelle</span>
+              <div class="w-5/6 bg-gray-200 rounded h-3">
+                <div class="bg-yellow-400 h-3 rounded" style="width: 60%"></div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <span class="w-1/6">4 stelle</span>
+              <div class="w-5/6 bg-gray-200 rounded h-3">
+                <div class="bg-yellow-300 h-3 rounded" style="width: 25%"></div>
+              </div>
+            </div>
+            <!-- Altri livelli -->
+          </div>
+        </div>
       </div>
-      <div class="total-reviews">Basato su <strong>150</strong> recensioni</div>
-    </div>
+    </section>
 
-    <div class="rating-breakdown">
-      <div class="bar-row"><span>5 stelle</span><div class="bar"><div style="width: 60%"></div></div></div>
-      <div class="bar-row"><span>4 stelle</span><div class="bar"><div style="width: 25%"></div></div></div>
-      <div class="bar-row"><span>3 stelle</span><div class="bar"><div style="width: 10%"></div></div></div>
-      <div class="bar-row"><span>2 stelle</span><div class="bar"><div style="width: 3%"></div></div></div>
-      <div class="bar-row"><span>1 stella</span><div class="bar"><div style="width: 2%"></div></div></div>
-    </div>
-  </section>
-
-  <section class="filters">
-    <label>Filtra per stelle:
-      <select id="starFilter">
-        <option value="">Tutte</option>
+    <!-- Filtri -->
+    <section class="bg-white p-4 rounded shadow mb-8 flex gap-4 flex-wrap">
+      <select id="ratingFilter" class="p-2 border rounded" onchange="filterReviews()">
+        <option value="all">Tutte le valutazioni</option>
         <option value="5">5 stelle</option>
         <option value="4">4 stelle</option>
         <option value="3">3 stelle</option>
         <option value="2">2 stelle</option>
         <option value="1">1 stella</option>
       </select>
-    </label>
-    <label>Filtra per data:
-      <select id="dateFilter">
-        <option value="">Tutte</option>
-        <option value="recenti">Più recenti</option>
-        <option value="vecchie">Più vecchie</option>
-      </select>
-    </label>
-    <label>Filtra per categoria:
-      <select id="categoryFilter">
-        <option value="">Tutte</option>
+      <select id="categoryFilter" class="p-2 border rounded" onchange="filterReviews()">
+        <option value="all">Tutte le categorie</option>
         <option value="servizio">Servizio</option>
         <option value="struttura">Struttura</option>
       </select>
-    </label>
-  </section>
+      <select id="dateFilter" class="p-2 border rounded" onchange="filterReviews()">
+        <option value="all">Tutte le date</option>
+        <option value="2025-04">Aprile 2025</option>
+        <option value="2025-03">Marzo 2025</option>
+      </select>
+    </section>
 
-  <section class="reviews" id="reviewsContainer">
-    <article class="review" data-stars="5" data-date="2024-04-01" data-category="servizio">
-      <h3>Maria R. - 01/04/2024</h3>
-      <div class="stars">★★★★★</div>
-      <p>Servizio impeccabile, rapido e preciso. Tornerò sicuramente!</p>
-    </article>
-    <article class="review" data-stars="4" data-date="2024-03-20" data-category="struttura">
-      <h3>Luca B. - 20/03/2024</h3>
-      <div class="stars">★★★★☆</div>
-      <p>Struttura ben organizzata ma con qualche dettaglio da migliorare.</p>
-    </article>
-    <article class="review" data-stars="3" data-date="2024-02-10" data-category="servizio">
-      <h3>Giulia S. - 10/02/2024</h3>
-      <div class="stars">★★★☆☆</div>
-      <p>Esperienza nella media, mi aspettavo qualcosa di più.</p>
-    </article>
-  </section>
+    <!-- Lista recensioni -->
+    <section class="space-y-4">
+      <article class="bg-white p-4 rounded shadow review-card" data-rating="5" data-category="servizio" data-date="2025-04">
+        <div class="flex justify-between mb-2">
+          <span class="font-semibold">Maria R.</span>
+          <span class="text-sm text-gray-500">15 Aprile 2025</span>
+        </div>
+        <div class="text-yellow-400">★★★★★ <span class="text-sm text-gray-600">5.0</span></div>
+        <p class="mt-2">Esperienza fantastica! Servizio clienti impeccabile, consigliatissimo.</p>
+      </article>
 
-  <button id="loadMore">Vedi tutte le recensioni</button>
+      <article class="bg-white p-4 rounded shadow review-card" data-rating="4" data-category="struttura" data-date="2025-03">
+        <div class="flex justify-between mb-2">
+          <span class="font-semibold">Luca B.</span>
+          <span class="text-sm text-gray-500">20 Marzo 2025</span>
+        </div>
+        <div class="text-yellow-400">★★★★ <span class="text-sm text-gray-600">4.0</span></div>
+        <p class="mt-2">Struttura molto accogliente, torneremo volentieri. Qualche dettaglio migliorabile.</p>
+      </article>
+    </section>
 
-  <script>
-    const reviews = document.querySelectorAll('.review');
-    const starFilter = document.getElementById('starFilter');
-    const dateFilter = document.getElementById('dateFilter');
-    const categoryFilter = document.getElementById('categoryFilter');
+    <div class="text-center mt-8">
+      <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Vedi tutte le recensioni</button>
+    </div>
+  </main>
 
-    function filterReviews() {
-      const starValue = starFilter.value;
-      const dateValue = dateFilter.value;
-      const categoryValue = categoryFilter.value;
-
-      let sorted = Array.from(reviews);
-
-      sorted.forEach(review => {
-        review.style.display = 'block';
-
-        if (starValue && review.dataset.stars !== starValue) {
-          review.style.display = 'none';
-        }
-
-        if (categoryValue && review.dataset.category !== categoryValue) {
-          review.style.display = 'none';
-        }
-      });
-
-      if (dateValue === 'recenti') {
-        sorted.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
-      } else if (dateValue === 'vecchie') {
-        sorted.sort((a, b) => new Date(a.dataset.date) - new Date(b.dataset.date));
-      }
-
-      const container = document.getElementById('reviewsContainer');
-      container.innerHTML = '';
-      sorted.forEach(r => container.appendChild(r));
-    }
-
-    starFilter.addEventListener('change', filterReviews);
-    dateFilter.addEventListener('change', filterReviews);
-    categoryFilter.addEventListener('change', filterReviews);
-  </script>
+  <footer class="text-center text-sm text-gray-400 p-4">
+    &copy; 2025 PS - Tutti i diritti riservati
+  </footer>
 </body>
-
 </html>
