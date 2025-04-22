@@ -1,82 +1,137 @@
-
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recensioni - PS</title>
-  <link rel="stylesheet" href="./style.css" />
+  <title>Recensioni - Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .star {
+      color: #fbbf24;
+    }
+    .scrollbar-hidden::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
 </head>
-<body>
-  <header class="header">
-    <div class="logo">LOGO PS</div>
-    <nav class="nav">
-      <a href="#">Home</a>
-      <a href="#">Chi siamo</a>
-      <a href="#">Contatti</a>
-    </nav>
+
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <div class="text-2xl font-bold text-blue-600">LOGO FAKE</div>
+    <h1 class="text-xl font-semibold">Recensioni dei nostri clienti</h1>
   </header>
 
-  <section class="hero">
-    <h1>Le recensioni dei nostri clienti</h1>
-    <p>Scopri cosa dicono di noi</p>
-  </section>
+  <main class="max-w-5xl mx-auto p-4">
+    <!-- Hero: Media e statistiche -->
+    <section class="bg-white rounded-xl p-6 shadow mb-6">
+      <h2 class="text-2xl font-bold mb-4">Valutazione del servizio</h2>
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+        <div class="text-center md:text-left mb-4 md:mb-0">
+          <div class="text-4xl font-bold text-green-600">4.5 / 5</div>
+          <div class="flex justify-center md:justify-start">
+            <span class="star text-xl">★ ★ ★ ★ ★</span>
+          </div>
+          <div class="text-sm text-gray-600 mt-1">Basato su 235 recensioni</div>
+        </div>
+        <div class="flex-1 ml-0 md:ml-6">
+          <div class="space-y-1">
+            <div class="flex items-center">
+              <span class="w-8">5★</span>
+              <div class="flex-1 bg-gray-200 h-3 mx-2 rounded">
+                <div class="bg-green-500 h-3 rounded" style="width: 60%"></div>
+              </div>
+              <span>141</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-8">4★</span>
+              <div class="flex-1 bg-gray-200 h-3 mx-2 rounded">
+                <div class="bg-green-400 h-3 rounded" style="width: 25%"></div>
+              </div>
+              <span>59</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-8">3★</span>
+              <div class="flex-1 bg-gray-200 h-3 mx-2 rounded">
+                <div class="bg-yellow-400 h-3 rounded" style="width: 8%"></div>
+              </div>
+              <span>19</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-8">2★</span>
+              <div class="flex-1 bg-gray-200 h-3 mx-2 rounded">
+                <div class="bg-orange-400 h-3 rounded" style="width: 4%"></div>
+              </div>
+              <span>10</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-8">1★</span>
+              <div class="flex-1 bg-gray-200 h-3 mx-2 rounded">
+                <div class="bg-red-400 h-3 rounded" style="width: 3%"></div>
+              </div>
+              <span>6</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="review-summary">
-    <div class="average-score">
-      <h2>4.5/5</h2>
-      <div class="stars">★★★★☆</div>
-      <p>Basato su 1.234 recensioni</p>
-    </div>
-    <div class="score-breakdown">
-      <div class="bar"><span>5 stelle</span><div class="progress" style="width: 70%"></div></div>
-      <div class="bar"><span>4 stelle</span><div class="progress" style="width: 20%"></div></div>
-      <div class="bar"><span>3 stelle</span><div class="progress" style="width: 5%"></div></div>
-      <div class="bar"><span>2 stelle</span><div class="progress" style="width: 3%"></div></div>
-      <div class="bar"><span>1 stella</span><div class="progress" style="width: 2%"></div></div>
-    </div>
-  </section>
+    <!-- Filtri -->
+    <section class="bg-white rounded-xl p-4 shadow mb-6">
+      <h3 class="text-lg font-semibold mb-2">Filtra le recensioni</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <select class="border border-gray-300 rounded px-3 py-2">
+          <option>Filtra per stelle</option>
+          <option>5 stelle</option>
+          <option>4 stelle</option>
+          <option>3 stelle</option>
+          <option>2 stelle</option>
+          <option>1 stella</option>
+        </select>
+        <select class="border border-gray-300 rounded px-3 py-2">
+          <option>Filtra per data</option>
+          <option>Ultimi 7 giorni</option>
+          <option>Ultimo mese</option>
+          <option>Ultimi 6 mesi</option>
+        </select>
+        <select class="border border-gray-300 rounded px-3 py-2">
+          <option>Categoria</option>
+          <option>Servizio clienti</option>
+          <option>Struttura</option>
+          <option>Esperienza generale</option>
+        </select>
+      </div>
+    </section>
 
-  <section class="filters">
-    <label>Filtra per stelle:
-      <select>
-        <option>Tutte</option>
-        <option>5 stelle</option>
-        <option>4 stelle</option>
-        <option>3 stelle</option>
-        <option>2 stelle</option>
-        <option>1 stella</option>
-      </select>
-    </label>
-    <label>Filtra per data:
-      <input type="date" />
-    </label>
-    <label>Categoria:
-      <select>
-        <option>Servizio</option>
-        <option>Struttura A</option>
-        <option>Struttura B</option>
-      </select>
-    </label>
-  </section>
-
-  <section class="reviews">
-    <article class="review">
-      <h3>Mario Rossi</h3>
-      <span class="date">20 Aprile 2025</span>
-      <div class="stars">★★★★★</div>
-      <p>Esperienza fantastica, tutto perfetto dall'inizio alla fine. Il supporto clienti è stato velocissimo e cortese.</p>
-    </article>
-    <article class="review">
-      <h3>Laura Bianchi</h3>
-      <span class="date">18 Aprile 2025</span>
-      <div class="stars">★★★★☆</div>
-      <p>Buona esperienza, ma migliorabile su alcuni aspetti come i tempi di risposta.</p>
-    </article>
-  </section>
-
-  <footer class="footer">
-    <p>&copy; 2025 PS. Tutti i diritti riservati.</p>
-  </footer>
+    <!-- Lista recensioni -->
+    <section class="bg-white rounded-xl p-4 shadow mb-6">
+      <h3 class="text-lg font-semibold mb-4">Recensioni recenti</h3>
+      <div class="space-y-6 max-h-[600px] overflow-y-auto scrollbar-hidden">
+        <div class="border-b pb-4">
+          <div class="flex justify-between items-center">
+            <strong>Maria R.</strong>
+            <span class="text-sm text-gray-500">10 Aprile 2025</span>
+          </div>
+          <div class="text-yellow-500 text-sm">★★★★☆</div>
+          <p class="mt-2 text-sm text-gray-700">Sono rimasta molto soddisfatta del servizio clienti. Ho trovato professionalità e cortesia. Anche la struttura dove abbiamo soggiornato era ben tenuta. Penso di tornare a prenotare in futuro.</p>
+        </div>
+        <div class="border-b pb-4">
+          <div class="flex justify-between items-center">
+            <strong>Giovanni B.</strong>
+            <span class="text-sm text-gray-500">5 Aprile 2025</span>
+          </div>
+          <div class="text-yellow-500 text-sm">★★★★★</div>
+          <p class="mt-2 text-sm text-gray-700">Servizio impeccabile dall'inizio alla fine. Comunicazione chiara, sito facile da usare e un'ottima assistenza. Non potevo chiedere di meglio.</p>
+        </div>
+      </div>
+      <div class="mt-6 text-center">
+        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Vedi tutte le recensioni</button>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
