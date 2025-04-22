@@ -3,114 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recensioni - PS</title>
+  <title>Pagina Recensioni</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script defer>
-    function filterReviews() {
-      const rating = document.getElementById('ratingFilter').value;
-      const category = document.getElementById('categoryFilter').value;
-      const date = document.getElementById('dateFilter').value;
-
-      const cards = document.querySelectorAll('.review-card');
-      cards.forEach(card => {
-        const cardRating = card.getAttribute('data-rating');
-        const cardCategory = card.getAttribute('data-category');
-        const cardDate = card.getAttribute('data-date');
-
-        const matchesRating = rating === "all" || cardRating === rating;
-        const matchesCategory = category === "all" || cardCategory === category;
-        const matchesDate = date === "all" || cardDate === date;
-
-        card.style.display = (matchesRating && matchesCategory && matchesDate) ? "block" : "none";
-      });
+  <style>
+    .star {
+      color: #fbbf24;
     }
-  </script>
+  </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-800">
-  <header class="bg-white shadow p-4 flex items-center justify-between">
-    <h1 class="text-xl font-bold">PS - Recensioni Clienti</h1>
-    <img src="logo-placeholder.png" alt="Logo" class="h-10">
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Nome Azienda</h1>
+      <nav class="space-x-4">
+        <a href="#" class="text-gray-600 hover:text-black">Home</a>
+        <a href="#" class="text-gray-600 hover:text-black font-semibold">Recensioni</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-8">
-    <!-- Blocco media recensioni -->
-    <section class="bg-white p-6 rounded shadow mb-8">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-bold">Valutazione media</h2>
-          <p class="text-4xl font-semibold">4.5 <span class="text-yellow-400">★★★★★</span></p>
-          <p class="text-sm text-gray-500">Basata su 1200 recensioni</p>
+  <main class="max-w-7xl mx-auto px-4 py-10">
+    <section class="mb-10">
+      <h2 class="text-3xl font-bold mb-4">Cosa pensano i nostri clienti</h2>
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="text-center md:text-left">
+          <div class="text-yellow-400 text-3xl">★★★★★</div>
+          <p class="text-xl font-semibold">4.6 su 5</p>
+          <p>Basato su 1532 recensioni</p>
         </div>
-        <div class="w-1/2">
+
+        <div class="w-full md:w-1/2 mt-6 md:mt-0">
           <div class="space-y-2">
             <div class="flex items-center">
-              <span class="w-1/6">5 stelle</span>
-              <div class="w-5/6 bg-gray-200 rounded h-3">
-                <div class="bg-yellow-400 h-3 rounded" style="width: 60%"></div>
+              <span class="w-12">5 ★</span>
+              <div class="w-full bg-gray-200 h-2 mx-2 rounded">
+                <div class="bg-yellow-400 h-2 rounded" style="width: 60%"></div>
               </div>
+              <span>920</span>
             </div>
             <div class="flex items-center">
-              <span class="w-1/6">4 stelle</span>
-              <div class="w-5/6 bg-gray-200 rounded h-3">
-                <div class="bg-yellow-300 h-3 rounded" style="width: 25%"></div>
+              <span class="w-12">4 ★</span>
+              <div class="w-full bg-gray-200 h-2 mx-2 rounded">
+                <div class="bg-yellow-400 h-2 rounded" style="width: 25%"></div>
               </div>
+              <span>380</span>
             </div>
-            <!-- Altri livelli -->
+            <div class="flex items-center">
+              <span class="w-12">3 ★</span>
+              <div class="w-full bg-gray-200 h-2 mx-2 rounded">
+                <div class="bg-yellow-400 h-2 rounded" style="width: 10%"></div>
+              </div>
+              <span>150</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-12">2 ★</span>
+              <div class="w-full bg-gray-200 h-2 mx-2 rounded">
+                <div class="bg-yellow-400 h-2 rounded" style="width: 3%"></div>
+              </div>
+              <span>45</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-12">1 ★</span>
+              <div class="w-full bg-gray-200 h-2 mx-2 rounded">
+                <div class="bg-yellow-400 h-2 rounded" style="width: 2%"></div>
+              </div>
+              <span>37</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Filtri -->
-    <section class="bg-white p-4 rounded shadow mb-8 flex gap-4 flex-wrap">
-      <select id="ratingFilter" class="p-2 border rounded" onchange="filterReviews()">
-        <option value="all">Tutte le valutazioni</option>
-        <option value="5">5 stelle</option>
-        <option value="4">4 stelle</option>
-        <option value="3">3 stelle</option>
-        <option value="2">2 stelle</option>
-        <option value="1">1 stella</option>
-      </select>
-      <select id="categoryFilter" class="p-2 border rounded" onchange="filterReviews()">
-        <option value="all">Tutte le categorie</option>
-        <option value="servizio">Servizio</option>
-        <option value="struttura">Struttura</option>
-      </select>
-      <select id="dateFilter" class="p-2 border rounded" onchange="filterReviews()">
-        <option value="all">Tutte le date</option>
-        <option value="2025-04">Aprile 2025</option>
-        <option value="2025-03">Marzo 2025</option>
-      </select>
+    <section class="mb-8">
+      <h3 class="text-2xl font-bold mb-4">Filtra recensioni</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <select id="filterRating" class="border border-gray-300 rounded p-2">
+          <option value="">Tutte le valutazioni</option>
+          <option value="5">5 stelle</option>
+          <option value="4">4 stelle</option>
+          <option value="3">3 stelle</option>
+          <option value="2">2 stelle</option>
+          <option value="1">1 stella</option>
+        </select>
+
+        <select id="filterDate" class="border border-gray-300 rounded p-2">
+          <option value="">Tutte le date</option>
+          <option value="last7">Ultimi 7 giorni</option>
+          <option value="last30">Ultimi 30 giorni</option>
+        </select>
+
+        <select id="filterCategory" class="border border-gray-300 rounded p-2">
+          <option value="">Tutte le categorie</option>
+          <option value="servizio">Servizio</option>
+          <option value="struttura">Struttura</option>
+        </select>
+      </div>
     </section>
 
-    <!-- Lista recensioni -->
-    <section class="space-y-4">
-      <article class="bg-white p-4 rounded shadow review-card" data-rating="5" data-category="servizio" data-date="2025-04">
-        <div class="flex justify-between mb-2">
-          <span class="font-semibold">Maria R.</span>
-          <span class="text-sm text-gray-500">15 Aprile 2025</span>
-        </div>
-        <div class="text-yellow-400">★★★★★ <span class="text-sm text-gray-600">5.0</span></div>
-        <p class="mt-2">Esperienza fantastica! Servizio clienti impeccabile, consigliatissimo.</p>
-      </article>
-
-      <article class="bg-white p-4 rounded shadow review-card" data-rating="4" data-category="struttura" data-date="2025-03">
-        <div class="flex justify-between mb-2">
-          <span class="font-semibold">Luca B.</span>
-          <span class="text-sm text-gray-500">20 Marzo 2025</span>
-        </div>
-        <div class="text-yellow-400">★★★★ <span class="text-sm text-gray-600">4.0</span></div>
-        <p class="mt-2">Struttura molto accogliente, torneremo volentieri. Qualche dettaglio migliorabile.</p>
-      </article>
+    <section id="reviews" class="space-y-6">
+      <!-- Recensioni inserite via JS -->
     </section>
-
-    <div class="text-center mt-8">
-      <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Vedi tutte le recensioni</button>
-    </div>
   </main>
 
-  <footer class="text-center text-sm text-gray-400 p-4">
-    &copy; 2025 PS - Tutti i diritti riservati
-  </footer>
+  <script>
+    const reviewsData = [
+      {
+        nome: "Marco R.",
+        data: "2024-03-15",
+        stelle: 5,
+        categoria: "servizio",
+        contenuto: "Servizio eccellente, tutto perfetto dall'inizio alla fine. Consigliatissimo!"
+      },
+      {
+        nome: "Lucia B.",
+        data: "2024-04-02",
+        stelle: 4,
+        categoria: "struttura",
+        contenuto: "Struttura molto bella ma migliorabile il servizio in loco."
+      },
+      {
+        nome: "Giorgio S.",
+        data: "2024-04-10",
+        stelle: 3,
+        categoria: "servizio",
+        contenuto: "Esperienza nella media, mi aspettavo di più considerando le recensioni."
+      }
+    ];
+
+    const reviewContainer = document.getElementById("reviews");
+    const ratingFilter = document.getElementById("filterRating");
+    const dateFilter = document.getElementById("filterDate");
+    const categoryFilter = document.getElementById("filterCategory");
+
+    function renderReviews() {
+      const rating = parseInt(ratingFilter.value);
+      const date = dateFilter.value;
+      const category = categoryFilter.value;
+
+      const now = new Date();
+      reviewContainer.innerHTML = "";
+
+      reviewsData.filter(r => {
+        let match = true;
+        if (!isNaN(rating)) match = r.stelle === rating;
+        if (match && date === "last7") match = (now - new Date(r.data)) / (1000 * 3600 * 24) <= 7;
+        if (match && date === "last30") match = (now - new Date(r.data)) / (1000 * 3600 * 24) <= 30;
+        if (match && category) match = r.categoria === category;
+        return match;
+      }).forEach(r => {
+        reviewContainer.innerHTML += `
+          <div class="bg-white rounded shadow p-4">
+            <div class="flex items-center justify-between">
+              <p class="font-semibold">${r.nome}</p>
+              <p class="text-sm text-gray-500">${r.data}</p>
+            </div>
+            <div class="text-yellow-400 text-xl mb-2">${"★".repeat(r.stelle)}${"☆".repeat(5 - r.stelle)}</div>
+            <p class="text-gray-700">${r.contenuto}</p>
+          </div>`;
+      });
+    }
+
+    ratingFilter.addEventListener("change", renderReviews);
+    dateFilter.addEventListener("change", renderReviews);
+    categoryFilter.addEventListener("change", renderReviews);
+
+    renderReviews();
+  </script>
 </body>
 </html>
