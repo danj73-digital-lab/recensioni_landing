@@ -1,107 +1,77 @@
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
   margin: 0;
-  background: #f9f9f9;
+  padding: 0;
+  background: #f5f5f5;
   color: #333;
 }
-
-.container {
-  width: 90%;
-  max-width: 960px;
-  margin: auto;
-}
-
 .header {
-  background: #00529b;
-  color: white;
-  padding: 1em 0;
+  background: #005baa;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+.hero {
+  background: #e5f0fa;
+  padding: 2rem;
   text-align: center;
 }
-
-.logo {
-  height: 50px;
-}
-
-.summary {
-  background: white;
-  margin-top: 1em;
-  padding: 1em;
+.review-summary {
+  background: #fff;
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 800px;
   border-radius: 8px;
 }
-
-.rating-overview {
+.average-score {
   text-align: center;
 }
-
-.rating-breakdown {
-  margin-top: 1em;
-}
-
-.rating-breakdown div {
+.score-breakdown .bar {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 0.25em 0;
+  margin-top: 0.5rem;
 }
-
-.bar {
+.score-breakdown .progress {
   height: 10px;
-  background: #ccc;
-  flex: 1;
-  border-radius: 5px;
+  background: #005baa;
+  margin-left: 1rem;
+  flex-grow: 1;
 }
-
-.bar-5 { background: #4caf50; width: 60%; }
-.bar-4 { background: #8bc34a; width: 25%; }
-.bar-3 { background: #cddc39; width: 10%; }
-.bar-2 { background: #ffc107; width: 3%; }
-.bar-1 { background: #f44336; width: 2%; }
-
 .filters {
-  background: white;
-  margin-top: 1em;
-  padding: 1em;
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: #fff;
   border-radius: 8px;
   display: flex;
-  gap: 1em;
   flex-wrap: wrap;
+  gap: 1rem;
 }
-
 .reviews {
-  background: white;
-  margin-top: 1em;
-  padding: 1em;
-  border-radius: 8px;
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem;
 }
-
 .review {
-  border-bottom: 1px solid #eee;
-  padding: 0.5em 0;
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
 }
-
-.review:last-child {
-  border-bottom: none;
+.review .stars {
+  color: gold;
 }
-
-.meta {
-  font-size: 0.9em;
-  color: #666;
-}
-
-.view-all {
-  display: block;
-  text-align: right;
-  margin-top: 1em;
-  text-decoration: none;
-  font-weight: bold;
-  color: #00529b;
-}
-
 .footer {
-  background: #eee;
+  background: #003e75;
+  color: #fff;
   text-align: center;
-  padding: 1em;
-  margin-top: 2em;
+  padding: 1rem;
 }
-    

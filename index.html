@@ -4,40 +4,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recensioni Clienti</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Recensioni - PS</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <header class="header">
-    <div class="container">
-      <img src="logo.png" alt="Logo Aziendale" class="logo" />
-      <h1>Recensioni dei nostri clienti</h1>
-    </div>
+    <div class="logo">LOGO PS</div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Chi siamo</a>
+      <a href="#">Contatti</a>
+    </nav>
   </header>
-  <section class="summary container">
-    <div class="rating-overview">
-      <h2>Valutazione complessiva</h2>
+
+  <section class="hero">
+    <h1>Le recensioni dei nostri clienti</h1>
+    <p>Scopri cosa dicono di noi</p>
+  </section>
+
+  <section class="review-summary">
+    <div class="average-score">
+      <h2>4.5/5</h2>
       <div class="stars">★★★★☆</div>
-      <div class="score">4.3 su 5</div>
-      <div class="total-reviews">Basato su 257 recensioni</div>
+      <p>Basato su 1.234 recensioni</p>
     </div>
-    <div class="rating-breakdown">
-      <div><span>5 stelle</span><div class="bar bar-5"></div> <span>60%</span></div>
-      <div><span>4 stelle</span><div class="bar bar-4"></div> <span>25%</span></div>
-      <div><span>3 stelle</span><div class="bar bar-3"></div> <span>10%</span></div>
-      <div><span>2 stelle</span><div class="bar bar-2"></div> <span>3%</span></div>
-      <div><span>1 stella</span><div class="bar bar-1"></div> <span>2%</span></div>
+    <div class="score-breakdown">
+      <div class="bar"><span>5 stelle</span><div class="progress" style="width: 70%"></div></div>
+      <div class="bar"><span>4 stelle</span><div class="progress" style="width: 20%"></div></div>
+      <div class="bar"><span>3 stelle</span><div class="progress" style="width: 5%"></div></div>
+      <div class="bar"><span>2 stelle</span><div class="progress" style="width: 3%"></div></div>
+      <div class="bar"><span>1 stella</span><div class="progress" style="width: 2%"></div></div>
     </div>
   </section>
-  <section class="filters container">
+
+  <section class="filters">
     <label>Filtra per stelle:
       <select>
-        <option value="all">Tutte</option>
-        <option value="5">5 stelle</option>
-        <option value="4">4 stelle</option>
-        <option value="3">3 stelle</option>
-        <option value="2">2 stelle</option>
-        <option value="1">1 stella</option>
+        <option>Tutte</option>
+        <option>5 stelle</option>
+        <option>4 stelle</option>
+        <option>3 stelle</option>
+        <option>2 stelle</option>
+        <option>1 stella</option>
       </select>
     </label>
     <label>Filtra per data:
@@ -45,28 +53,30 @@
     </label>
     <label>Categoria:
       <select>
-        <option value="all">Tutte</option>
-        <option value="servizio">Servizio</option>
-        <option value="struttura">Struttura</option>
+        <option>Servizio</option>
+        <option>Struttura A</option>
+        <option>Struttura B</option>
       </select>
     </label>
   </section>
-  <section class="reviews container">
+
+  <section class="reviews">
     <article class="review">
-      <h3>Giulia R.</h3>
-      <div class="meta">Pubblicata il 10 Marzo 2024 · ★★★★★</div>
-      <p>Esperienza fantastica! Il servizio clienti è stato impeccabile e il viaggio ben organizzato. Torneremo sicuramente.</p>
+      <h3>Mario Rossi</h3>
+      <span class="date">20 Aprile 2025</span>
+      <div class="stars">★★★★★</div>
+      <p>Esperienza fantastica, tutto perfetto dall'inizio alla fine. Il supporto clienti è stato velocissimo e cortese.</p>
     </article>
     <article class="review">
-      <h3>Marco D.</h3>
-      <div class="meta">Pubblicata il 2 Marzo 2024 · ★★★★☆</div>
-      <p>Buona organizzazione generale. Qualche problema nella prenotazione iniziale, ma risolto velocemente.</p>
+      <h3>Laura Bianchi</h3>
+      <span class="date">18 Aprile 2025</span>
+      <div class="stars">★★★★☆</div>
+      <p>Buona esperienza, ma migliorabile su alcuni aspetti come i tempi di risposta.</p>
     </article>
-    <a class="view-all" href="#">Vedi tutte le recensioni →</a>
   </section>
+
   <footer class="footer">
-    <div class="container">© 2025 Azienda - Tutti i diritti riservati</div>
+    <p>&copy; 2025 PS. Tutti i diritti riservati.</p>
   </footer>
 </body>
 </html>
-    
