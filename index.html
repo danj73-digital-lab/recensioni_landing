@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recensioni Clienti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="logo.png" alt="Logo Aziendale" class="logo" />
+      <h1>Recensioni dei nostri clienti</h1>
+    </div>
+  </header>
+  <section class="summary container">
+    <div class="rating-overview">
+      <h2>Valutazione complessiva</h2>
+      <div class="stars">★★★★☆</div>
+      <div class="score">4.3 su 5</div>
+      <div class="total-reviews">Basato su 257 recensioni</div>
+    </div>
+    <div class="rating-breakdown">
+      <div><span>5 stelle</span><div class="bar bar-5"></div> <span>60%</span></div>
+      <div><span>4 stelle</span><div class="bar bar-4"></div> <span>25%</span></div>
+      <div><span>3 stelle</span><div class="bar bar-3"></div> <span>10%</span></div>
+      <div><span>2 stelle</span><div class="bar bar-2"></div> <span>3%</span></div>
+      <div><span>1 stella</span><div class="bar bar-1"></div> <span>2%</span></div>
+    </div>
+  </section>
+  <section class="filters container">
+    <label>Filtra per stelle:
+      <select>
+        <option value="all">Tutte</option>
+        <option value="5">5 stelle</option>
+        <option value="4">4 stelle</option>
+        <option value="3">3 stelle</option>
+        <option value="2">2 stelle</option>
+        <option value="1">1 stella</option>
+      </select>
+    </label>
+    <label>Filtra per data:
+      <input type="date" />
+    </label>
+    <label>Categoria:
+      <select>
+        <option value="all">Tutte</option>
+        <option value="servizio">Servizio</option>
+        <option value="struttura">Struttura</option>
+      </select>
+    </label>
+  </section>
+  <section class="reviews container">
+    <article class="review">
+      <h3>Giulia R.</h3>
+      <div class="meta">Pubblicata il 10 Marzo 2024 · ★★★★★</div>
+      <p>Esperienza fantastica! Il servizio clienti è stato impeccabile e il viaggio ben organizzato. Torneremo sicuramente.</p>
+    </article>
+    <article class="review">
+      <h3>Marco D.</h3>
+      <div class="meta">Pubblicata il 2 Marzo 2024 · ★★★★☆</div>
+      <p>Buona organizzazione generale. Qualche problema nella prenotazione iniziale, ma risolto velocemente.</p>
+    </article>
+    <a class="view-all" href="#">Vedi tutte le recensioni →</a>
+  </section>
+  <footer class="footer">
+    <div class="container">© 2025 Azienda - Tutti i diritti riservati</div>
+  </footer>
+</body>
+</html>
+    
